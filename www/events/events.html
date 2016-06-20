@@ -1,0 +1,35 @@
+<ion-view class="cool-gray-background">
+  <ion-nav-title>
+  <ion-spinner icon="lines" class="spinner-balanced" ng-if="(vm.values.processing)"></ion-spinner>
+    <span ng-if="!(vm.values.processing)">Meets<span>
+  </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+        <button class="button icon button-clear white-text ion-plus-round" ng-click="vm.transition()">
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="event in vm.EventsService.results | orderBy: 'updated_at':true" type="item-text-wrap">
+
+            <div class="row">
+              <div class="col col-10 item-icon-left">
+                   <i class="icon" ng-class="{'ion-locked': event.status == 'full','ion-android-cancel':  event.status == 'canceled', 'ion-unlocked': event.status == 'open' }" ng-click="vm.goToDetailed(event)"></i>
+              </div>
+
+              <div class="col col-ID">
+                <h2>{{event.title}}</h2>
+                <p>Last Update: <span am-time-ago="event.updated_at"></span></p>
+              </div>
+              <div class="col carsTable__col--action"><a ng-click="ctrl.showEditCarForm(car)" class=" icon-accessory icon ion-chevron-right"></a></div>
+            </div>
+                <ion-option-button class="button-assertive" ng-if="event.status != 'canceled' && event.my_privilege == 'admin'" ng-click="vm.cancel(event)" ng-show="!(vm.isContained(vm.processingButtons, event))">
+                  Cancel
+                </ion-option-button>
+                <ion-option-button class="button-assertive" ng-if="!(event.status != 'canceled' && event.my_privilege == 'admin')" ng-click="vm.leave(event)" ng-show="!(vm.isContained(vm.processingButtons, event))">
+                  Leave
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

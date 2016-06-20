@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title></title>
+
+		<!-- build:css styles/lib.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<!-- build:css styles/app.css -->
+		<!-- inject:css -->
+		<link rel="stylesheet" href="/ionic.app.css">
+		<!-- endinject -->
+		<!-- endbuild -->
+		<!-- build:js js/ionic.bundle.js -->
+		<!-- ionic/angularjs js -->
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
+		<!-- endbuild -->
+		<!-- cordova script -->
+		<script src="cordova.js"></script>
+
+	</head>
+	<body ng-app="app">
+		<!--
+			The nav bar that will be updated as we navigate between views.
+		-->
+		<ion-nav-bar class="bar red-background white-text">
+			<ion-nav-back-button class="white-text">
+			</ion-nav-back-button>
+
+		</ion-nav-bar>
+		
+		<!--
+			The views will be rendered in the <ion-nav-view> directive below
+			Templates are in the /templates folder (but you could also
+			have templates inline in this html file if you'd like).
+		-->
+		<ion-nav-view></ion-nav-view>
+
+		<!-- build:js js/lib.js -->
+		<!-- bower:js -->
+		<script src="lib/angular-messages/angular-messages.js"></script>
+		<script src="lib/moment/moment.js"></script>
+		<script src="lib/angular-moment/angular-moment.js"></script>
+		<script src="lib/angular-recaptcha/release/angular-recaptcha.js"></script>
+		<!-- endbower -->
+		<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&amp;render=explicit" async defer></script>
+		<!-- endbuild -->
+		<script src="http://localhost:9292/faye.js"></script>
+		<!-- build:js js/app.js -->
+		<!-- inject:js -->
+		<script src="/app.module.js"></script>
+		<script src="/account/about/about.module.js"></script>
+		<script src="/account/account.module.js"></script>
+		<script src="/account/terms/terms.module.js"></script>
+		<script src="/authentication/authentication.module.js"></script>
+		<script src="/contacts/contacts-add/contacts-add.module.js"></script>
+		<script src="/contacts/contacts.module.js"></script>
+		<script src="/core/app.core.module.js"></script>
+		<script src="/events/event-detail/event-detail.module.js"></script>
+		<script src="/events/event-detail/events-detail-description/events-detail-description.module.js"></script>
+		<script src="/events/event-detail/events-detail-edit/events-detail-edit.module.js"></script>
+		<script src="/events/event-detail/events-detail-invite/events-detail-invite.module.js"></script>
+		<script src="/events/event-detail/events-detail-invited/events-detail-invited.module.js"></script>
+		<script src="/events/events-create/events-create-invite/events-create-invite.module.js"></script>
+		<script src="/events/events-create/events-create.module.js"></script>
+		<script src="/events/events.module.js"></script>
+		<script src="/helpers/helpers.module.js"></script>
+		<script src="/passreset/passreset.module.js"></script>
+		<script src="/registration/registation.module.js"></script>
+		<script src="/services/services.module.js"></script>
+		<script src="/account/about/about.controller.js"></script>
+		<script src="/account/about/about.routes.js"></script>
+		<script src="/account/account.controller.js"></script>
+		<script src="/account/account.routes.js"></script>
+		<script src="/account/terms/terms.controller.js"></script>
+		<script src="/account/terms/terms.routes.js"></script>
+		<script src="/app.config.js"></script>
+		<script src="/app.routes.js"></script>
+		<script src="/app.run.js"></script>
+		<script src="/authentication/authentication.controller.js"></script>
+		<script src="/authentication/authentication.routes.js"></script>
+		<script src="/contacts/contacts-add/contact-add.routes.js"></script>
+		<script src="/contacts/contacts-add/contacts-add.controller.js"></script>
+		<script src="/contacts/contacts.controller.js"></script>
+		<script src="/contacts/contacts.routes.js"></script>
+		<script src="/contacts/contacts.service.js"></script>
+		<script src="/directives/event-remover.directives.js"></script>
+		<script src="/directives/hideTabs.directive.js"></script>
+		<script src="/directives/infinite.direcive.js"></script>
+		<script src="/events/event-detail/event-detail.controller.js"></script>
+		<script src="/events/event-detail/event-detail.routes.js"></script>
+		<script src="/events/event-detail/events-detail-description/events-detail-description.controller.js"></script>
+		<script src="/events/event-detail/events-detail-description/events-detail-description.routes.js"></script>
+		<script src="/events/event-detail/events-detail-edit/events-detail-edit.controller.js"></script>
+		<script src="/events/event-detail/events-detail-edit/events-detail-edit.routes.js"></script>
+		<script src="/events/event-detail/events-detail-invite/events-detail-invite.controller.js"></script>
+		<script src="/events/event-detail/events-detail-invite/events-detail-invite.routes.js"></script>
+		<script src="/events/event-detail/events-detail-invited/events-detail-invited.controller.js"></script>
+		<script src="/events/event-detail/events-detail-invited/events-detail-invited.routes.js"></script>
+		<script src="/events/events-create/events-create-invite/events-create-invite.controller.js"></script>
+		<script src="/events/events-create/events-create-invite/events-create-invite.routes.js"></script>
+		<script src="/events/events-create/events-create.controller.js"></script>
+		<script src="/events/events-create/events-create.routes.js"></script>
+		<script src="/events/events.controller.js"></script>
+		<script src="/events/events.routes.js"></script>
+		<script src="/events/events.service.js"></script>
+		<script src="/filters/assistLimit.filter.js"></script>
+		<script src="/filters/friends.filter.js"></script>
+		<script src="/filters/requestsRecieved.filter.js"></script>
+		<script src="/filters/requestsSent.filter.js"></script>
+		<script src="/helpers/error.service.js"></script>
+		<script src="/passreset/passreset.controller.js"></script>
+		<script src="/passreset/passreset.routes.js"></script>
+		<script src="/registration/registration.controller.js"></script>
+		<script src="/registration/registration.routes.js"></script>
+		<script src="/services/socket-message-handler.service.js"></script>
+		<script src="/services/values.service.js"></script>
+		<script src="/session/session.service.js"></script>
+		<!-- endinject -->
+		<script src="lib/angular-cookie/angular-cookie.js"></script>
+		<script src="lib/ng-token-auth/dist/ng-token-auth.js"></script>
+		<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+		
+
+		<!-- inject:templates:js -->
+		<!-- endinject -->
+		<!-- endbuild -->
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+	</body>
+</html>

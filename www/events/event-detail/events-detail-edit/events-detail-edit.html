@@ -1,0 +1,40 @@
+<ion-view class="cool-gray-background" hide-tabs='true'>
+    <ion-nav-title>
+        <ion-spinner icon="lines" class="spinner-balanced" ng-if="(vm.values.processing)"></ion-spinner>
+        <span ng-if="!(vm.values.processing)">Edit Meet<span>
+  </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear white-text" ng-click="vm.update(vm.editingEvent)" ng-disabled="(vm.values.processing)">
+            Update
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <div class="item item-divider">
+                Edit Meet
+            </div>
+            <label class="item item-input">
+                <input ng-model="vm.editingEvent.title" type="text" placeholder="Title" maxlength="50">
+            </label>
+            <label class="item item-input">
+                <textarea ng-model="vm.editingEvent.description" placeholder="Description" maxlength="1500" rows="10">
+                </textarea>
+            </label>
+            <div class="item item-divider"></div>
+            <ion-item class="item-button-right">
+                Assist Limit 
+                <div class="centeredData">
+                {{vm.editingEvent.assist_limit | assistLimit}}
+                </div>
+                <div class="buttons">
+                    <button class="button button-energized" ng-click="vm.decreaseAssistLimit()">
+                        <i class="icon ion-minus-round"></i>
+                    </button>
+                    <button class="button button-dark" ng-click="vm.increaseAssistLimit()">
+                        <i class="icon ion-plus-round"></i>
+                    </button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

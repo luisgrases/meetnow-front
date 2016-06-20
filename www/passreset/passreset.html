@@ -1,0 +1,15 @@
+<ion-view class="cool-gray-background" view-title="Password Reset">
+    <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">
+        Please provide your account email where we can send the password reset instructions.
+      </div>
+    </div>
+    <div class="list">
+            <label class="item item-input">
+                <input type="email" ng-model="vm.email" placeholder="Email">
+            </label>
+
+        <button class="button button-full button-positive" ng-click="vm.resetPassword(vm.email)">Send</button>
+    </ion-content>
+</ion-view>
